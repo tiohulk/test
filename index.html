@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de ayuda para tratamiento de cancer</title>
+  <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section id="inicio">
+    <h1>Ayuda a Elizabeth</h1>
+    <p>Hola mi nombre es Elizabeth General, tengo 40 años y en unas breves líneas te contaré mi historia.</p>
+    <img src="imagen1.jpg" alt="Imagen de [Nombre de la persona]">
+  </section>
+  <section id="historia">
+    <h2>La historia de [Nombre de la persona]</h2>
+    <p>[Texto que describe la historia de la persona y su lucha contra el cáncer]</p>
+    <img src="imagen2.jpg" alt="Imagen de [Nombre de la persona]">
+  </section>
+  <section id="contacto">
+    <h2>Quieres ayudar pero no sabes cómo...</h2>
+    <p>Puedes ayudar realizando diferentes tipos de donaciones, tanto monetarias como donaciones en premios para realizar las rifas que buscan el mismo fin, apoyar a apalear los gastos médicos del tratamiento de mi enfermedad.</p><br>
+    <p>Al final de la pagina encontrarás los enlaces de acceso a los bancos generales por si deseas realizar un aporte monetario a mi cuenta rut de banco estado.</p> <br>
+    <p>También puedes dejar un mesaje de apoyo o para generar una energía positiva, creelo que me ayudará mucho.</p>
+
+    <form>
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre"><br><br>
+      <label for="correo">Correo electrónico:</label>
+      <input type="email" id="correo" name="correo"><br><br>
+      <label for="comentario">Comentario:</label>
+      <textarea id="comentario" name="comentario"></textarea><br><br>
+      <button>Enviar</button>
+    </form>
+    <div id="muro-mensajes"></div>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: 'cargar-mensajes.php',
+                type: 'GET',
+                success: function(data) {
+        $('#muro-mensajes').html(data);
+                }
+            });
+        });
+    </script>
+    <div class="donaciones">
+      <h3>Donaciones</h3>
+      <p>Puedes hacer una donación a través de los siguientes bancos:</p>
+      <ul>
+        <li>
+          <img src="assets/img/webp/bancoestado.webp" alt="Banco Estado"> <br>
+          <a href="https://www.bancoestado.cl/" target="_blank">Banco Estado</a>
+        </li>
+        <li>
+          <img src="assets/img/webp/scotiabank.webp" alt="Scotiabank"> <br>
+          <a href="https://www.scotiabank.cl/" target="_blank">Scotiabank</a>
+        </li>
+        <li>
+          <img src="assets/img/webp/santander.webp" alt="Banco Santander"> <br>
+          <a href="https://www.santander.cl/" target="_blank">Banco Santander</a>
+        </li>
+        <li>
+          <img src="assets/img/webp/bancochile.webp" alt="Banco de Chile"> <br>
+          <a href="https://www.bancochile.cl/" target="_blank">Banco de Chile</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <footer>
+    <p><center>&copy; 2024 Elizabeth General G.</center></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <mensaje>
+    <id>1</id>
+    <texto>Mensaje 1</texto>
+  </mensaje>
+  <mensaje>
+    <id>2</id>
+    <texto>Mensaje 2</texto>
+  </mensaje>
+  <!-- más mensajes aquí -->
+</root>
